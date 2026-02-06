@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Monitoring</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    nav {
+  background: #0f2027;
+  padding: 15px 40px;
+}
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="live_monitoring.html" class="active">Live Monitoring</a></li>
+      <li><a href="waste_info.html">Waste Info</a></li>
+    </ul>
+  </nav>
+
+  <!-- Monitoring Section -->
+  <section class="monitoring">
+    <h2>Live Waste Monitoring Dashboard</h2>
+    <div id="liveData" class="sensor-container">
+      <div class="sensor-box">
+        <h3>Sensor 1 (Dry Bin)</h3>
+        <p>Status: <span id="sensor1">--</span></p>
+      </div>
+      <div class="sensor-box">
+        <h3>Sensor 2 (Wet Bin)</h3>
+        <p>Status: <span id="sensor2">--</span></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

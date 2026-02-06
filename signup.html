@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account - Smart Waste</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f2027,#2c5364,#00b09b);
+color:white;
+}
+
+.card{
+width:360px;
+padding:40px;
+border-radius:15px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+box-shadow:0px 10px 30px rgba(0,0,0,0.3);
+text-align:center;
+}
+
+h2{margin-bottom:20px;}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#00c896;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#00a37a;
+}
+
+a{
+color:#a8ffdb;
+text-decoration:none;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>🌱 Create Account</h2>
+
+<form id="signupForm">
+<input type="text" id="fullName" placeholder="Full Name" required>
+<input type="email" id="signupEmail" placeholder="Email" required>
+<input type="password" id="signupPassword" placeholder="Password" required>
+<input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+<button type="submit">Register</button>
+</form>
+
+<p style="margin-top:15px;">
+Already have an account? <a href="Sign_in.html">Sign In</a>
+</p>
+
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    updateProfile
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  console.log("Script loaded ✅");
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBlRPjiuVNFUxa5sr1Wly45zo2BB-mmIug",
+    authDomain: "waste-management-cacfb.firebaseapp.com",
+    projectId: "waste-management-cacfb",
+    storageBucket: "waste-management-cacfb.firebasestorage.app",
+    messagingSenderId: "198304892572",
+    appId: "1:198304892572:web:b8ec69ee3183eafc1d4f59",
+    measurementId: "G-YXR0Z4M2TD"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const form = document.getElementById("signupForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match ❌");
+      return;
+    }
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+      await updateProfile(userCredential.user, {
+        displayName: fullName
+      });
+
+      alert("Account Created ✅");
+      window.location.href = "index.html";
+
+    } catch (err) {
+      alert("Signup Failed ❌ " + err.message);
+      console.error(err);
+    }
+  });
+</script>
+
+
+
+
+</body>
+</html>

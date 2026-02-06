@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Waste Segregation System</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="profile.js"></script>
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="live_monitoring.html">Live Monitoring</a></li>
+    <li><a href="waste_info.html">Waste Info</a></li>
+  </ul>
+
+  <!-- Profile Dropdown -->
+  <div class="profile-area">
+    <button id="profileBtn" class="profile-btn">
+      <span id="profileCircle">U</span>
+    </button>
+
+    <div id="profileDropdown" class="profile-dropdown">
+      <p id="dropdownName" class="drop-name">Loading...</p>
+      <p id="dropdownEmail" class="drop-email"></p>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Welcome to Smart Waste Segregation System</h1>
+    <p>Empowering a cleaner and greener planet through technology.</p>
+    <a href="waste_info.html" class="btn">Learn More</a>
+  </header>
+
+  <!-- Visual Section -->
+  <section class="visuals">
+    <h2>Why Waste Segregation Matters</h2>
+    <p>Proper waste segregation helps in recycling, reduces landfill waste, and keeps our environment healthy.</p>
+    <div class="image-grid">
+      <img src="pngtree-recycle-icon-png-image_560377.jpg" alt="Recycle">
+      <img src="clean_city.jpg" alt="Clean City">
+      <img src="plat_tree.webp" alt="Plant Tree">
+      <img src="dry_wet_waste.webp" alt="Smart Bin">
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <h2>Be the Change</h2>
+    <p>Segregate your waste, plant trees, and make your city smart and sustainable!</p>
+    <a href="about.html" class="btn">Know More About Us</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Smart Waste Segregation System </p>
+  </footer>
+  <section style="text-align:center; margin-top:20px;">
+  <h3 id="userName">Loading...</h3>
+  <p id="userEmail"></p>
+  <button id="logoutBtn" style="padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
+    Logout
+  </button>
+</section>
+
+<!-- <script type="module" src="profile.js"></script> -->
+
+</body>
+</html>

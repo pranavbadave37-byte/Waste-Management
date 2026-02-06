@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waste Information</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Add some specific styling for toggle sections */
+    .info-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .info-btn {
+      background: linear-gradient(135deg, #43a047, #66bb6a);
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .info-btn:hover {
+      background: linear-gradient(135deg, #388e3c, #43a047);
+      transform: scale(1.05);
+    }
+
+    .info-section {
+      display: none;
+      background: rgba(255, 255, 255, 0.7);
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 15px;
+      width: 85%;
+      max-width: 800px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s ease;
+      text-align: left;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .info-section h3 {
+      color: #1b5e20;
+      margin-bottom: 10px;
+    }
+
+    .info-section ul {
+      margin-left: 20px;
+    }
+    nav {
+  background: #0f2027;
+  padding: 15px 40px;
+}
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+       <li><a href="about.html">About</a></li>
+      <li><a href="live_monitoring.html">Live Monitoring</a></li>
+      <li><a href="waste_info.html" class="active">Waste Info</a></li>
+    </ul>
+  </nav>
+
+  <section class="waste-info">
+    <h2>Types of Waste</h2>
+    <p>Click below to learn more about Dry and Wet Waste categories.</p>
+
+    <div class="info-container">
+      <button class="info-btn" onclick="showInfo('dry')">🟫 Dry Waste</button>
+      <button class="info-btn" onclick="showInfo('wet')">💧 Wet Waste</button>
+    </div>
+
+    <div id="dry" class="info-section">
+      <h3>Dry Waste</h3>
+      <p>Dry waste includes materials that are not biodegradable and can be recycled or reused. These items are typically dry, hard, and clean.</p>
+      <ul>
+        <li>Paper, cardboard, and cartons</li>
+        <li>Plastic bottles and containers</li>
+        <li>Glass and metal cans</li>
+        <li>Old clothes, shoes, and bags</li>
+        <li>Thermocol and packaging material</li>
+      </ul>
+      <p><strong>Tip:</strong> Always ensure dry waste is clean and not mixed with food or liquids before disposal.</p>
+    </div>
+
+    <div id="wet" class="info-section">
+      <h3>Wet Waste</h3>
+      <p>Wet waste mainly consists of organic and biodegradable materials that can decompose naturally.</p>
+      <ul>
+        <li>Food leftovers and peels</li>
+        <li>Tea bags and coffee grounds</li>
+        <li>Flowers and plant waste</li>
+        <li>Used tissues and napkins</li>
+        <li>Small quantities of garden waste</li>
+      </ul>
+      <p><strong>Tip:</strong> Wet waste can be composted to create organic fertilizer for plants 🌱.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Smart Waste Segregation Project | Designed with ♻️ care</p>
+  </footer>
+
+  <script>
+    function showInfo(type) {
+      document.getElementById('dry').style.display = 'none';
+      document.getElementById('wet').style.display = 'none';
+
+      document.getElementById(type).style.display = 'block';
+      window.scrollTo({
+        top: document.getElementById(type).offsetTop - 50,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>

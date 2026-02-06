@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Smart Waste Segregation</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Extra styles for the suggestion form */
+    nav {
+  background: #0f2027;
+  padding: 15px 40px;
+}
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="live_monitoring.html">Live Monitoring</a></li>
+      
+        <li><a href="waste_info.html">Waste Info</a></li>
+    </ul>
+  </nav>
+
+  <section class="about-page">
+    <h2>About Our Project</h2>
+    <p>
+      Our Smart Waste Segregation System aims to create a sustainable, efficient, and smart way of managing waste.
+      We use IoT and AI-based sensors to automatically separate dry and wet waste, ensuring proper recycling and composting.
+    </p>
+
+    <h3>Our Vision</h3>
+    <p>
+      To promote an eco-friendly environment by reducing human effort and encouraging responsible waste management.
+    </p>
+
+    <h3>Our Mission</h3>
+    <ul>
+      <li>Develop affordable smart segregation systems for all communities.</li>
+      <li>Encourage people to recycle and reduce landfill waste.</li>
+      <li>Integrate AI and IoT for real-time monitoring and analytics.</li>
+    </ul>
+
+    <!-- 🌿 Suggestion Section -->
+    <div class="suggestion-section">
+      <h2>💬 Give Us Your Suggestions</h2>
+      <p>We’d love to hear your ideas to improve our project! Fill out the form below 👇</p>
+
+      <form id="suggestionForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" rows="5" placeholder="Write your suggestion here..." required></textarea>
+        <button type="submit">Submit Suggestion</button>
+      </form>
+
+      <p class="thankyou-msg" id="thankyouMessage">✅ Thank you for your valuable suggestion!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Smart Waste Segregation Project | Designed with ♻️ care</p>
+  </footer>
+
+  <script>
+    // Simple frontend-only message on submit
+    document.getElementById("suggestionForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("thankyouMessage").style.display = "block";
+      this.reset();
+      setTimeout(() => {
+        document.getElementById("thankyouMessage").style.display = "none";
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
